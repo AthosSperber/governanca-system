@@ -1,21 +1,42 @@
 from __future__ import annotations
 
 import uuid
+from datetime import datetime, timezone
 
+from applications.academia.metrics import build_academia_metrics
 from core.protocol import Action, Report
+
+
+def _utc_now_iso() -> str:
+    return datetime.now(timezone.utc).replace(microsecond=0).isoformat()
 
 
 class ExecutorAgent:
     def execute(self, action: Action) -> Report:
-        summary = "Simulated execution completed without inference."
+        context = self._extract_context(action.instructions)
         details = {
-            "action_received": action.instructions,
-            "execution_mode": "placeholder",
+            "action_id": action.id,
+            "task_id": action.task_id,
+            "context": context,
+            "execution_mode": "neutral",
         }
+        if context == "academia":
+            details["context_route"] = "academia"
+            details["metrics"] = build_academia_metrics()
+        summary = "Execution completed with neutral reporting."
         return Report(
             id=str(uuid.uuid4()),
             action_id=action.id,
+            created_at=_utc_now_iso(),
             summary=summary,
             details=details,
-            status="executed",
+            status="ok",
         )
+
+    def _extract_context(self, instructions: str) -> str:
+        lowered = instructions.lower()
+        if "context:" not in lowered:
+            return "unknown"
+        after = lowered.split("context:", 1)[1].strip()
+        context = after.split(".", 1)[0].strip()
+        return context or "unknown"
