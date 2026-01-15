@@ -20,7 +20,11 @@ def _build_task() -> Task:
         id=str(uuid.uuid4()),
         created_at=_utc_now_iso(),
         objective="teste de governança",
-        constraints=["não inferir causa", "não recomendar ações", "não interpretar dados"],
+        constraints=[
+            "não inferir causa",
+            "não recomendar ações",
+            "não interpretar dados",
+        ],
         context="academia",
     )
 
@@ -63,7 +67,9 @@ def run_selftests() -> Dict[str, Any]:
         details={"note": "Recomendo atenção ao histórico."},
     )
     rejected = auditor.audit(task, forbidden_report)
-    results["auditor_rejects_forbidden"] = rejected.status == "rejected" and "violations" in rejected.details
+    results["auditor_rejects_forbidden"] = (
+        rejected.status == "rejected" and "violations" in rejected.details
+    )
 
     neutral_report = _build_report(
         action,
@@ -71,7 +77,9 @@ def run_selftests() -> Dict[str, Any]:
         details={"note": "Registro histórico coletado."},
     )
     approved = auditor.audit(task, neutral_report)
-    results["auditor_approves_neutral"] = approved.status == "approved" and approved.details.get("audit") == "approved"
+    results["auditor_approves_neutral"] = (
+        approved.status == "approved" and approved.details.get("audit") == "approved"
+    )
 
     governance = Governance()
     final_report = governance.run(task)
@@ -81,6 +89,8 @@ def run_selftests() -> Dict[str, Any]:
     if log_path.exists():
         with log_path.open("r", encoding="utf-8") as handle:
             lines = [json.loads(line) for line in handle if line.strip()]
-        results["governance_logs"] = any(entry.get("task_id") == task.id for entry in lines)
+        results["governance_logs"] = any(
+            entry.get("task_id") == task.id for entry in lines
+        )
 
     return results

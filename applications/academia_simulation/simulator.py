@@ -19,7 +19,9 @@ def run_academia_simulation(
     capacity_adjustments = {name: capacity_increment for name in equipment_names}
     simulated_records = _build_simulated_records(records, capacity_adjustments)
     simulated_metrics = _build_metrics_from_records(simulated_records)
-    factual_differences = _build_factual_differences(historical_metrics, simulated_metrics)
+    factual_differences = _build_factual_differences(
+        historical_metrics, simulated_metrics
+    )
     scenario_parameters = {
         "capacity_increment": capacity_increment,
         "capacity_adjustments": capacity_adjustments,
@@ -49,7 +51,9 @@ def _build_simulated_records(
     return simulated
 
 
-def _build_metrics_from_records(records: List[Dict[str, str]]) -> Dict[str, Dict[str, int] | int]:
+def _build_metrics_from_records(
+    records: List[Dict[str, str]],
+) -> Dict[str, Dict[str, int] | int]:
     with NamedTemporaryFile("w", delete=False, encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=["timestamp", "equipment"])
         writer.writeheader()
