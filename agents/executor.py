@@ -67,7 +67,7 @@ class ExecutorAgent:
                 )
             else:
                 details["output_paths"] = {}
-                report_status = "rejected"
+                details["visualization_status"] = "rejected"
         summary = "Execution completed with neutral reporting."
         return Report(
             id=str(uuid.uuid4()),
