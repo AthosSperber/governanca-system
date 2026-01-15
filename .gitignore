@@ -30,3 +30,4 @@ $RECYCLE.BIN/
 
 # Runtime data
 memory/events.jsonl
+output/

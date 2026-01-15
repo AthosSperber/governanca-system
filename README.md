@@ -1,100 +1,72 @@
 # governanca-system
 
-Sistema de governança com protocolo explícito, rastreabilidade por eventos e agentes com papéis institucionais.
+![CI](https://github.com/AthosSperber/governanca-system/actions/workflows/ci.yml/badge.svg) ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-## What is Governance System
+O governanca-system é um sistema de governança com protocolo explícito e rastreabilidade por eventos.
+Ele existe para garantir fluxo canônico (Task → Action → Report) e separar dados históricos de simulações.
+As saídas são descritivas e auditáveis, mantendo linguagem neutra e comparações numéricas.
+O objetivo é oferecer clareza operacional com rigor técnico, sem alterar fatos por hipótese.
 
-Governanca-system é um núcleo operacional que assegura fluxo, restrições e rastreabilidade para aplicações que operam sob um protocolo canônico de mensagens.
+Para navegação de documentos, veja o [Índice de Documentação](docs/README.md).
 
-## Constitutional Authority
+## Quickstart
 
-The constitutional authority for this repository is `/constitution/GOVERNANCA_SYSTEM_CONSTITUTION.md`. The explicit priority order is:
-
-1. **Constitution**
-2. **Business Rules**
-3. **UX**
-4. **Technical Implementation**
-
-No code/metric/report/visualization/simulation is valid if it violates the Constitution.
-
-## Core Architecture
-
-- **Protocol**: mensagens estáveis (Task / Action / Report) com IDs e timestamps.
-- **Governance**: orquestração do fluxo e logging append-only.
-- **Agents**: papéis institucionais (Executor, Auditor, Creative) sem decisão ou recomendação.
-- **Applications**: módulos contextuais conectados via Executor.
-
-## Protocol (Task / Action / Report)
-
-- **Task**: descreve objetivo, restrições e contexto.
-- **Action**: consolida instruções operacionais a partir da Task.
-- **Report**: registra o resultado executado e auditado.
-
-## Agents as Institutional Roles
-
-- **Executor**: produz saídas estruturadas e neutras.
-- **Auditor**: valida constraints com auditoria mecânica.
-- **Creative**: gera ideias em contexto sem inferência.
-
-## Append-only Audit Logs
-
-A governança grava eventos em `memory/events.jsonl`, mantendo histórico contínuo e correlacionável por IDs.
-
-## Application Example: Academia
-
-A aplicação `academia` carrega um CSV simples e produz métricas históricas básicas (total de registros, contagem por equipamento e por horário).
-
-## Project 2 — Governed Simulation
-
-O Projeto 2 adiciona uma aplicação de simulação governada que trabalha com cenários hipotéticos separados do histórico. A saída é descritiva e numérica, sem decisão ou recomendação. A simulação não é registrada como histórico e permanece isolada do Projeto 1, mantendo a separação epistêmica entre fatos e hipótese. 
-
-Diferença principal:
-
-- **Project 1 (Academia)**: relata métricas históricas observadas.
-- **Project 2 (Academia Simulation)**: recalcula métricas em um dataset hipotético e compara valores numéricos com o histórico, sem interpretação.
-
-## Project 3 — Governed Visualization
-
-Visualizações frequentemente introduzem viés ao sugerir conclusões por meio de linguagem, hierarquia visual ou escolha de destaque. O Project 3 prova que é possível visualizar dados mantendo a governança como fonte de controle, sem transformar gráficos em argumentos. A aplicação gera HTML estático e auditável com seções separadas para histórico, simulação e comparação numérica.
-
-Os arquivos HTML são gerados em `output/`:
-
-- `report_academia_historical.html`
-- `report_academia_simulation.html`
-- `report_academia_combined.html`
-
-Execução via CLI:
+> Dependências de runtime: nenhuma. O `requirements.txt` contém apenas `ruff` para lint.
 
 ```bash
+python -m venv .venv
+pip install -r requirements.txt
+python main.py selftest
+python main.py run --app academia
+python main.py run --app academia_simulation
 python main.py run --app academia_visualization
 ```
 
-## Roadmap
+Os relatórios HTML são gerados em `output/`.
 
-- ✅ **Project 1: Academia (Historical)**
-- ✅ **Project 2: Governed Simulation**
-- ✅ **Project 3: Governed Visualization**
-- ⏳ **Next: Hardening / Templates / Interview pack**
+## What you get
 
-## Architectural Foundations & References
+- JSON de relatório no terminal.
+- Log append-only em `memory/events.jsonl`.
+- Relatórios HTML em `output/`.
 
-- Clean Architecture — Robert C. Martin
-- Separation of Concerns — Edsger Dijkstra
-- Event Logs / Data Lineage — Martin Kleppmann
-- Command / Message Pattern — GoF
-- Multi-Agent Systems (roles, not intelligence) — Wooldridge
+## Arquitetura em um olhar
 
-### Conceptual & Literary References
+```
+Task -> Action -> Report
+          |
+          v
+Governance (append-only) -> memory/events.jsonl
+
+Agents: Executor | Auditor | Creative
+Applications: academia | academia_simulation | academia_visualization
+```
+
+## Projetos
+
+- **Project 1 = Historical (Academia)**
+- **Project 2 = Governed Simulation**
+- **Project 3 = Governed Visualization**
+
+Separação explícita: histórico ≠ simulação, comparação apenas numérica.
+
+## Constitutional Authority
+
+A autoridade máxima é a Constituição em `/constitution/GOVERNANCA_SYSTEM_CONSTITUTION.md`.
+Qualquer artefato deve seguir a ordem de prioridade: Constituição → Regras de Negócio → UX → Implementação Técnica.
+
+## Referências
 
 - Edward Tufte — *The Visual Display of Quantitative Information*
 - Martin Kleppmann — *Designing Data-Intensive Applications*
 - Robert C. Martin — *Clean Architecture*
 - Edsger Dijkstra — Separation of Concerns
 - GoF — Command / Message Pattern
+- Michael Wooldridge — Multi-Agent Systems
 
-## What This System Is NOT
+## Non-goals
 
-- Not an AI decision maker
-- Not a recommender system
-- Not a predictive engine
-- Not a dashboard-first product
+- Não é um decisor automático.
+- Não é um sistema de recomendação.
+- Não é um motor preditivo.
+- Não é um produto dashboard-first.
