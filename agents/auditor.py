@@ -25,11 +25,13 @@ class AuditorAgent:
     def audit(self, task: Task, report: Report) -> Report:
         violations = self._find_violations(report)
         audited_details = dict(report.details)
-        if violations:
-            audited_details["violations"] = violations
-            status = "rejected"
-        elif report.status == "rejected":
+        if report.status == "rejected":
+            if violations:
+                audited_details["violations"] = violations
             audited_details["audit"] = "rejected"
+            status = "rejected"
+        elif violations:
+            audited_details["violations"] = violations
             status = "rejected"
         else:
             audited_details["audit"] = "approved"
