@@ -42,10 +42,28 @@ Diferença principal:
 - **Project 1 (Academia)**: relata métricas históricas observadas.
 - **Project 2 (Academia Simulation)**: recalcula métricas em um dataset hipotético e compara valores numéricos com o histórico, sem interpretação.
 
+## Project 3 — Governed Visualization
+
+Visualizações frequentemente introduzem viés ao sugerir conclusões por meio de linguagem, hierarquia visual ou escolha de destaque. O Project 3 prova que é possível visualizar dados mantendo a governança como fonte de controle, sem transformar gráficos em argumentos. A aplicação gera HTML estático e auditável com seções separadas para histórico, simulação e comparação numérica.
+
+Os arquivos HTML são gerados em `output/`:
+
+- `report_academia_historical.html`
+- `report_academia_simulation.html`
+- `report_academia_combined.html`
+
+Execução via CLI:
+
+```bash
+python main.py run --app academia_visualization
+```
+
 ## Roadmap
 
-- **Project 2: Simulation**
-- **Project 3: Visualization**
+- ✅ **Project 1: Academia (Historical)**
+- ✅ **Project 2: Governed Simulation**
+- ✅ **Project 3: Governed Visualization**
+- ⏳ **Next: Hardening / Templates / Interview pack**
 
 ## Architectural Foundations & References
 
@@ -54,6 +72,14 @@ Diferença principal:
 - Event Logs / Data Lineage — Martin Kleppmann
 - Command / Message Pattern — GoF
 - Multi-Agent Systems (roles, not intelligence) — Wooldridge
+
+### Conceptual & Literary References
+
+- Edward Tufte — *The Visual Display of Quantitative Information*
+- Martin Kleppmann — *Designing Data-Intensive Applications*
+- Robert C. Martin — *Clean Architecture*
+- Edsger Dijkstra — Separation of Concerns
+- GoF — Command / Message Pattern
 
 ## What This System Is NOT
 

@@ -7,6 +7,7 @@ from pathlib import Path
 
 from applications.academia.mission import create_academia_mission
 from applications.academia_simulation.mission import create_academia_simulation_mission
+from applications.academia_visualization.mission import create_academia_visualization_mission
 from core.governance import Governance
 
 
@@ -16,6 +17,8 @@ def _run_app(app: str) -> None:
         task = create_academia_mission()
     elif app == "academia_simulation":
         task = create_academia_simulation_mission()
+    elif app == "academia_visualization":
+        task = create_academia_visualization_mission()
     else:
         raise ValueError(f"Aplicação não suportada: {app}")
     final_report = governance.run(task)
@@ -47,7 +50,7 @@ def _build_parser() -> argparse.ArgumentParser:
     run_parser.add_argument(
         "--app",
         required=True,
-        choices=["academia", "academia_simulation"],
+        choices=["academia", "academia_simulation", "academia_visualization"],
         help="Aplicação alvo",
     )
 
