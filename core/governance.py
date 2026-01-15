@@ -15,7 +15,9 @@ def _utc_now_iso() -> str:
 
 
 class Governance:
-    def __init__(self, executor: ExecutorAgent | None = None, auditor: AuditorAgent | None = None) -> None:
+    def __init__(
+        self, executor: ExecutorAgent | None = None, auditor: AuditorAgent | None = None
+    ) -> None:
         self._executor = executor or ExecutorAgent()
         self._auditor = auditor or AuditorAgent()
         self._log_path = os.path.join("memory", "events.jsonl")

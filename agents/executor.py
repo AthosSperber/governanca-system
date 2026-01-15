@@ -60,7 +60,10 @@ class ExecutorAgent:
                 "SIMULAÇÃO (HIPÓTESE)",
                 "COMPARAÇÃO (DIFERENÇAS NUMÉRICAS)",
             ]
-            if audited_historical.status == "approved" and audited_simulation.status == "approved":
+            if (
+                audited_historical.status == "approved"
+                and audited_simulation.status == "approved"
+            ):
                 details["output_paths"] = render_academia_visualization(
                     audited_historical,
                     audited_simulation,

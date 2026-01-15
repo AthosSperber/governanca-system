@@ -36,7 +36,9 @@ def render_academia_visualization(
     historical_section = _build_historical_section(report_historical)
     simulation_section = _build_simulation_section(report_simulation)
     comparison_section = _build_comparison_section(report_simulation)
-    traceability_section = _build_traceability_section(report_historical, report_simulation)
+    traceability_section = _build_traceability_section(
+        report_historical, report_simulation
+    )
 
     historical_html = _render_html(
         template,
@@ -51,7 +53,12 @@ def render_academia_visualization(
     combined_html = _render_html(
         template,
         title="Academia — Relatório Combinado",
-        sections=[traceability_section, historical_section, simulation_section, comparison_section],
+        sections=[
+            traceability_section,
+            historical_section,
+            simulation_section,
+            comparison_section,
+        ],
     )
 
     historical_file = output_path / "report_academia_historical.html"
@@ -104,7 +111,9 @@ def _build_simulation_section(report: Report) -> str:
         "Parâmetros de simulação",
         parameters,
     )
-    cards = _build_cards({"Total de registros": simulated_metrics.get("total_records", 0)})
+    cards = _build_cards(
+        {"Total de registros": simulated_metrics.get("total_records", 0)}
+    )
     equipment_table = _build_table_from_mapping(
         "Contagem por equipamento",
         simulated_metrics.get("count_by_equipment", {}),
@@ -146,7 +155,9 @@ def _build_comparison_section(report: Report) -> str:
     )
 
 
-def _build_traceability_section(report_historical: Report, report_simulation: Report) -> str:
+def _build_traceability_section(
+    report_historical: Report, report_simulation: Report
+) -> str:
     rows = [
         {"Fonte": LABEL_HISTORICAL, "Report ID": report_historical.id},
         {"Fonte": LABEL_SIMULATION, "Report ID": report_simulation.id},
@@ -159,12 +170,12 @@ def _build_cards(values: Dict[str, Any]) -> str:
     cards = []
     for label, value in values.items():
         cards.append(
-            "<div class=\"card\">"
-            f"<div class=\"meta\">{escape(str(label))}</div>"
+            '<div class="card">'
+            f'<div class="meta">{escape(str(label))}</div>'
             f"<div><strong>{escape(str(value))}</strong></div>"
             "</div>"
         )
-    return f"<div class=\"cards\">{''.join(cards)}</div>"
+    return f'<div class="cards">{"".join(cards)}</div>'
 
 
 def _build_table_from_mapping(title: str, mapping: Dict[str, Any]) -> str:
@@ -212,7 +223,7 @@ def _build_row(headers: List[str], row: Dict[str, Any]) -> str:
 
 def _wrap_section(title: str, parts: Iterable[str]) -> str:
     content = "".join(part for part in parts if part)
-    return f"<section class=\"section\"><h2>{escape(title)}</h2>{content}</section>"
+    return f'<section class="section"><h2>{escape(title)}</h2>{content}</section>'
 
 
 def _extract_metrics(report: Report, key: str) -> Dict[str, Any]:

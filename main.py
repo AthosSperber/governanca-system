@@ -7,7 +7,9 @@ from pathlib import Path
 
 from applications.academia.mission import create_academia_mission
 from applications.academia_simulation.mission import create_academia_simulation_mission
-from applications.academia_visualization.mission import create_academia_visualization_mission
+from applications.academia_visualization.mission import (
+    create_academia_visualization_mission,
+)
 from core.governance import Governance
 
 

@@ -10,7 +10,9 @@ from applications.academia.loader import load_records
 DEFAULT_DATA_PATH = Path(__file__).with_name("data.csv")
 
 
-def build_academia_metrics(csv_path: str | Path = DEFAULT_DATA_PATH) -> Dict[str, Dict[str, int] | int]:
+def build_academia_metrics(
+    csv_path: str | Path = DEFAULT_DATA_PATH,
+) -> Dict[str, Dict[str, int] | int]:
     records = load_records(csv_path)
     total_records = len(records)
     count_by_equipment = _count_by_key(records, "equipment")
