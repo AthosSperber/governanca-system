@@ -6,6 +6,7 @@ from dataclasses import asdict
 from pathlib import Path
 
 from applications.academia.mission import create_academia_mission
+from applications.academia_simulation.mission import create_academia_simulation_mission
 from core.governance import Governance
 
 
@@ -13,6 +14,8 @@ def _run_app(app: str) -> None:
     governance = Governance()
     if app == "academia":
         task = create_academia_mission()
+    elif app == "academia_simulation":
+        task = create_academia_simulation_mission()
     else:
         raise ValueError(f"Aplicação não suportada: {app}")
     final_report = governance.run(task)
@@ -41,7 +44,12 @@ def _build_parser() -> argparse.ArgumentParser:
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     run_parser = subparsers.add_parser("run", help="Executar aplicação governada")
-    run_parser.add_argument("--app", required=True, choices=["academia"], help="Aplicação alvo")
+    run_parser.add_argument(
+        "--app",
+        required=True,
+        choices=["academia", "academia_simulation"],
+        help="Aplicação alvo",
+    )
 
     subparsers.add_parser("show-logs", help="Exibir logs append-only")
     subparsers.add_parser("selftest", help="Executar auto-testes leves")
