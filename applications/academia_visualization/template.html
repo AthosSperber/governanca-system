@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{title}}</title>
+    <style>
+      :root {
+        color-scheme: light;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        margin: 0;
+        padding: 32px;
+        background: #f7f7f8;
+        color: #1f2328;
+      }
+      header {
+        margin-bottom: 24px;
+      }
+      h1 {
+        font-size: 24px;
+        margin: 0 0 8px 0;
+      }
+      h2 {
+        font-size: 18px;
+        margin: 24px 0 12px 0;
+      }
+      h3 {
+        font-size: 16px;
+        margin: 16px 0 8px 0;
+      }
+      .meta {
+        font-size: 12px;
+        color: #4b5563;
+      }
+      .notice {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        padding: 12px 16px;
+        border-radius: 8px;
+        font-size: 13px;
+      }
+      .section {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 16px;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 12px;
+        margin-top: 12px;
+      }
+      .card {
+        border: 1px solid #e5e7eb;
+        border-radius: 6px;
+        padding: 12px;
+        background: #f9fafb;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+        margin-top: 8px;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 8px;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      th {
+        background: #f3f4f6;
+        font-weight: 600;
+      }
+      footer {
+        margin-top: 32px;
+        font-size: 12px;
+        color: #6b7280;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>{{title}}</h1>
+      <div class="meta">Gerado em {{generated_at}}</div>
+    </header>
+    <section class="notice">
+      {{notice}}
+    </section>
+    {{sections}}
+    <footer>Relatório estático e auditável.</footer>
+  </body>
+</html>
