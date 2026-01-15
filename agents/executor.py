@@ -9,7 +9,7 @@ from applications.academia_simulation.mission import create_academia_simulation_
 from applications.academia_simulation.simulator import run_academia_simulation
 from applications.academia_visualization.renderer import render_academia_visualization
 from agents.auditor import AuditorAgent
-from core.protocol import Action, Report, Task
+from core.protocol import CONSTITUTION_PATH, CONSTITUTION_VERSION, Action, Report, Task
 
 
 def _utc_now_iso() -> str:
@@ -24,6 +24,10 @@ class ExecutorAgent:
             "task_id": action.task_id,
             "context": context,
             "execution_mode": "neutral",
+            "constitution": {
+                "version": CONSTITUTION_VERSION,
+                "path": CONSTITUTION_PATH,
+            },
         }
         report_status = "ok"
         if context == "academia":

@@ -5,6 +5,9 @@ from typing import Any, Dict, List, Literal
 
 Status = Literal["ok", "approved", "rejected", "audited", "error"]
 
+CONSTITUTION_VERSION = "1.1"
+CONSTITUTION_PATH = "/constitution/GOVERNANCA_SYSTEM_CONSTITUTION.md"
+
 
 @dataclass(frozen=True)
 class Task:

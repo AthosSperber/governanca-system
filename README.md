@@ -6,6 +6,17 @@ Sistema de governança com protocolo explícito, rastreabilidade por eventos e a
 
 Governanca-system é um núcleo operacional que assegura fluxo, restrições e rastreabilidade para aplicações que operam sob um protocolo canônico de mensagens.
 
+## Constitutional Authority
+
+The constitutional authority for this repository is `/constitution/GOVERNANCA_SYSTEM_CONSTITUTION.md`. The explicit priority order is:
+
+1. **Constitution**
+2. **Business Rules**
+3. **UX**
+4. **Technical Implementation**
+
+No code/metric/report/visualization/simulation is valid if it violates the Constitution.
+
 ## Core Architecture
 
 - **Protocol**: mensagens estáveis (Task / Action / Report) com IDs e timestamps.

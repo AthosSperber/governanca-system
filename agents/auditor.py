@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any, Iterable
 
-from core.protocol import Report, Task
+from core.protocol import CONSTITUTION_PATH, CONSTITUTION_VERSION, Report, Task
 
 
 class AuditorAgent:
@@ -25,6 +25,10 @@ class AuditorAgent:
     def audit(self, task: Task, report: Report) -> Report:
         violations = self._find_violations(report)
         audited_details = dict(report.details)
+        audited_details["constitution"] = {
+            "version": CONSTITUTION_VERSION,
+            "path": CONSTITUTION_PATH,
+        }
         if violations:
             audited_details["violations"] = violations
             status = "rejected"
