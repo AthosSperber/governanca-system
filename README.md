@@ -33,6 +33,15 @@ A governança grava eventos em `memory/events.jsonl`, mantendo histórico contí
 
 A aplicação `academia` carrega um CSV simples e produz métricas históricas básicas (total de registros, contagem por equipamento e por horário).
 
+## Project 2 — Governed Simulation
+
+O Projeto 2 adiciona uma aplicação de simulação governada que trabalha com cenários hipotéticos separados do histórico. A saída é descritiva e numérica, sem decisão ou recomendação. A simulação não é registrada como histórico e permanece isolada do Projeto 1, mantendo a separação epistêmica entre fatos e hipótese. 
+
+Diferença principal:
+
+- **Project 1 (Academia)**: relata métricas históricas observadas.
+- **Project 2 (Academia Simulation)**: recalcula métricas em um dataset hipotético e compara valores numéricos com o histórico, sem interpretação.
+
 ## Roadmap
 
 - **Project 2: Simulation**

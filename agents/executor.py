@@ -4,6 +4,7 @@ import uuid
 from datetime import datetime, timezone
 
 from applications.academia.metrics import build_academia_metrics
+from applications.academia_simulation.simulator import run_academia_simulation
 from core.protocol import Action, Report
 
 
@@ -23,6 +24,9 @@ class ExecutorAgent:
         if context == "academia":
             details["context_route"] = "academia"
             details["metrics"] = build_academia_metrics()
+        elif context == "academia_simulation":
+            details["context_route"] = "academia_simulation"
+            details.update(run_academia_simulation())
         summary = "Execution completed with neutral reporting."
         return Report(
             id=str(uuid.uuid4()),
