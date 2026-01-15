@@ -28,6 +28,9 @@ class AuditorAgent:
         if violations:
             audited_details["violations"] = violations
             status = "rejected"
+        elif report.status == "rejected":
+            audited_details["audit"] = "rejected"
+            status = "rejected"
         else:
             audited_details["audit"] = "approved"
             status = "approved"
