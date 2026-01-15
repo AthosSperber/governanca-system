@@ -24,12 +24,19 @@ class AuditorAgent:
 
     def audit(self, task: Task, report: Report) -> Report:
         violations = self._find_violations(report)
+        upstream_rejections = self._collect_upstream_rejections(report.details)
         audited_details = dict(report.details)
         audited_details["constitution"] = {
             "version": CONSTITUTION_VERSION,
             "path": CONSTITUTION_PATH,
         }
-        if violations:
+        if upstream_rejections:
+            audited_details["upstream_audit"] = {
+                "status": "rejected",
+                "sources": upstream_rejections,
+            }
+            status = "rejected"
+        elif violations:
             audited_details["violations"] = violations
             status = "rejected"
         else:
@@ -51,6 +58,12 @@ class AuditorAgent:
         for path, value in self._walk("details", report.details):
             violations.extend(self._match_terms(path, value))
         return violations
+
+    def _collect_upstream_rejections(self, details: dict[str, Any]) -> list[str]:
+        audit_status = details.get("audit_status")
+        if not isinstance(audit_status, dict):
+            return []
+        return [key for key, value in audit_status.items() if value == "rejected"]
 
     def _walk(self, path: str, value: Any) -> Iterable[tuple[str, Any]]:
         if isinstance(value, dict):
