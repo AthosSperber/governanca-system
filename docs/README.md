@@ -24,6 +24,13 @@
 - [Contribution Model](CONTRIBUTING_MODEL.md)
 - [Process](PROCESS.md)
 
+## Governance Stress & Validation
+
+- [Second Domain Thought Experiment](DOMAIN_STRESS_TEST.md)
+- [Boundary Validation](BOUNDARY_VALIDATION.md)
+- [Governance Guarantees](GOVERNANCE_GUARANTEES.md)
+- [Domain Model](DOMAIN_MODEL.md)
+
 ## Documentação do Projeto
 
 - [Overview](OVERVIEW.md)
