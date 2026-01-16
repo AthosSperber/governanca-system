@@ -10,6 +10,13 @@
 - [Orientação do Framework](FRAMEWORK.md)
 - [Adicionar um Domínio](ADDING_A_DOMAIN.md)
 
+## Governance & Contribution
+
+- [Contribution Model](CONTRIBUTING_MODEL.md)
+- [Process](PROCESS.md)
+- [Sprints](SPRINTS)
+- [Framework](FRAMEWORK.md)
+
 ## Documentação do Projeto
 
 - [Overview](OVERVIEW.md)
