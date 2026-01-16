@@ -5,6 +5,13 @@
 - [Constitution](../constitution/GOVERNANCA_SYSTEM_CONSTITUTION.md)
 - [Governance Process](../constitution/GOVERNANCE.md)
 
+## Documentação do Projeto
+
+- [Overview](OVERVIEW.md)
+- [Roadmap](ROADMAP.md)
+- [Sprints](SPRINTS)
+- [Changelog](CHANGELOG.md)
+
 ## Interview Pack
 
 - [00 - Elevator Pitch](../interview_pack/00_elevator_pitch.md)
