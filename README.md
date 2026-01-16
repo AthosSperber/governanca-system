@@ -9,6 +9,24 @@ O objetivo é oferecer clareza operacional com rigor técnico, sem alterar fatos
 
 Para navegação de documentos, veja o [Índice de Documentação](docs/README.md).
 
+## Demo (no install)
+
+GitHub Pages Demo: https://<OWNER>.github.io/governanca-system/ (replace <OWNER> if forked)
+
+## What you can verify in 60 seconds
+
+1. Abrir o link do demo.
+2. Abrir o relatório Combined (domínio de referência: Academia).
+3. Ver rótulos de separação explícita e a seção de comparação numérica.
+
+## How to adopt this framework
+
+- docs/FRAMEWORK.md
+- docs/ADDING_A_DOMAIN.md
+- docs/PROCESS.md
+- docs/GOVERNANCE_GUARANTEES.md
+- docs/REVIEW_SIGNALS.md
+
 ## Quickstart
 
 > Dependências de runtime: nenhuma. O `requirements.txt` contém apenas `ruff` para lint.
@@ -67,6 +85,6 @@ Qualquer artefato deve seguir a ordem de prioridade: Constituição → Regras d
 ## Non-goals
 
 - Não é um decisor automático.
-- Não é um sistema de recomendação.
+- Não é um sistema prescritivo.
 - Não é um motor preditivo.
 - Não é um produto dashboard-first.
