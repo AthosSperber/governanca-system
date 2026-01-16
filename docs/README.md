@@ -1,5 +1,9 @@
 # Índice de Documentação
 
+## Public Demo
+
+- [Public Demo (static artifacts)](../docs-site/index.html) — páginas HTML estáticas para visualização de portfólio.
+
 ## Documentos Constitucionais
 
 - [Constitution](../constitution/GOVERNANCA_SYSTEM_CONSTITUTION.md)
