@@ -40,6 +40,13 @@
 - [Domain Model](DOMAIN_MODEL.md)
 - [Process](PROCESS.md)
 
+## Interview & Portfolio
+
+- [Interview Walkthrough](INTERVIEW_WALKTHROUGH.md)
+- [Common Misinterpretations](MISINTERPRETATIONS.md)
+- [Project Closure Statement](PROJECT_CLOSURE.md)
+- [Governance Guarantees](GOVERNANCE_GUARANTEES.md)
+
 ## Sprints
 
 - [Sprints](SPRINTS)
