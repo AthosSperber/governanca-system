@@ -11,6 +11,9 @@
 - [Roadmap](ROADMAP.md)
 - [Sprints](SPRINTS)
 - [Changelog](CHANGELOG.md)
+- [Specification](SPECIFICATION.md)
+- [Domain Model](DOMAIN_MODEL.md)
+- [Process](PROCESS.md)
 
 ## Interview Pack
 
