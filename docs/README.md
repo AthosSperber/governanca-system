@@ -17,6 +17,13 @@
 - [Sprints](SPRINTS)
 - [Framework](FRAMEWORK.md)
 
+## Governance Guarantees & Review
+
+- [Governance Guarantees](GOVERNANCE_GUARANTEES.md)
+- [Review Signals](REVIEW_SIGNALS.md)
+- [Contribution Model](CONTRIBUTING_MODEL.md)
+- [Process](PROCESS.md)
+
 ## Documentação do Projeto
 
 - [Overview](OVERVIEW.md)
