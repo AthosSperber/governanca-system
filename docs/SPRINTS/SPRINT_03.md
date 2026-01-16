@@ -26,5 +26,5 @@ A governed visualization layer that preserves the separation of historical data 
 ## Non-Goals
 
 - No modifications to historical or simulation data.
-- No recommendations or decisions.
+- No prescriptive directives or decisions.
 - No dashboards.

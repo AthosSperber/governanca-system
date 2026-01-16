@@ -27,4 +27,4 @@ A governed simulation layer that preserves historical integrity and supports con
 
 - No changes to historical records.
 - No visualization outputs.
-- No recommendations or decisions.
+- No prescriptive directives or decisions.

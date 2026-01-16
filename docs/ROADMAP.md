@@ -14,4 +14,4 @@
 
 - No AI decisions.
 - No dashboards.
-- No automated recommendations or prescriptive guidance.
+- No automated prescriptive directives or guidance.
