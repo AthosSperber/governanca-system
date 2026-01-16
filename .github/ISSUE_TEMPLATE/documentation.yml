@@ -1,0 +1,45 @@
+name: Documentation Change
+description: Propose documentation evolution within the governed framework.
+title: "Documentation: "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This repository is a governed framework. Requests without clear scope, sprint alignment, and constitutional alignment are out of scope.
+  - type: input
+    id: sprint
+    attributes:
+      label: Sprint Alignment
+      description: Identify the sprint this request maps to.
+      placeholder: "SPRINT 06 — Templates & Institutional UX"
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope Statement
+      description: Describe the exact documentation changes and boundaries.
+    validations:
+      required: true
+  - type: textarea
+    id: constitutional_alignment
+    attributes:
+      label: Constitutional Alignment
+      description: Cite the relevant constitutional or governance references and state alignment.
+    validations:
+      required: true
+  - type: textarea
+    id: non_goals
+    attributes:
+      label: Non-Goals / Out of Scope
+      description: State explicitly what is excluded. Vague or open-ended requests are out of scope.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Runtime and Protocol Impact
+      description: Confirm that no runtime behavior or protocol semantics change is requested.
+    validations:
+      required: true

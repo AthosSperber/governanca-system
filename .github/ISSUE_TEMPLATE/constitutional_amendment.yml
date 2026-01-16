@@ -1,0 +1,45 @@
+name: Constitutional Amendment
+description: Propose an amendment under the constitutional governance process.
+title: "Constitutional Amendment: "
+labels: ["constitutional"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Constitutional amendments require strict traceability, explicit scope, and alignment with the amendment process. Requests outside constitutional procedure are out of scope.
+  - type: input
+    id: sprint
+    attributes:
+      label: Sprint Alignment
+      description: Identify the sprint this amendment maps to.
+      placeholder: "SPRINT 06 — Templates & Institutional UX"
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope Statement
+      description: Describe the exact constitutional changes and boundaries.
+    validations:
+      required: true
+  - type: textarea
+    id: constitutional_alignment
+    attributes:
+      label: Constitutional Alignment
+      description: Cite the governing sections that permit this amendment and state alignment.
+    validations:
+      required: true
+  - type: textarea
+    id: amendment_basis
+    attributes:
+      label: Amendment Basis
+      description: Reference the amendment process and the documents that will be affected.
+    validations:
+      required: true
+  - type: textarea
+    id: non_goals
+    attributes:
+      label: Non-Goals / Out of Scope
+      description: State explicitly what is excluded. Vague or open-ended requests are out of scope.
+    validations:
+      required: true

@@ -1,0 +1,45 @@
+name: Implementation Change
+description: Propose implementation evolution within constitutional and sprint scope.
+title: "Implementation: "
+labels: ["implementation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Implementation changes require explicit sprint alignment, constitutional alignment, and bounded scope. Open-ended or speculative requests are out of scope.
+  - type: input
+    id: sprint
+    attributes:
+      label: Sprint Alignment
+      description: Identify the sprint this request maps to.
+      placeholder: "SPRINT 06 — Templates & Institutional UX"
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope Statement
+      description: Describe the exact implementation changes and boundaries.
+    validations:
+      required: true
+  - type: textarea
+    id: constitutional_alignment
+    attributes:
+      label: Constitutional Alignment
+      description: Cite the relevant constitutional or governance references and state alignment.
+    validations:
+      required: true
+  - type: textarea
+    id: non_goals
+    attributes:
+      label: Non-Goals / Out of Scope
+      description: State explicitly what is excluded. Vague or open-ended requests are out of scope.
+    validations:
+      required: true
+  - type: textarea
+    id: protocol_behavior
+    attributes:
+      label: Protocol and Runtime Impact
+      description: Describe the expected impact on protocol semantics and runtime behavior.
+    validations:
+      required: true
