@@ -27,4 +27,4 @@ A governed historical foundation for the Academia domain with clear separation f
 
 - No simulation logic.
 - No visualization outputs.
-- No recommendations or decisions.
+- No prescriptive directives or decisions.

@@ -14,4 +14,4 @@ The Academia domain is intentionally reused across all projects to keep the doma
 
 ## Non-Recommendation Posture
 
-governanca-system does not issue recommendations or decisions. It exposes structured facts, controlled analysis, and governed simulations without crossing into decision-making. This protects the separation between evidence and action, ensuring that the system remains an instrument for human decision-makers rather than an automated authority.
+governanca-system does not issue prescriptive directives or decisions. It exposes structured facts, controlled analysis, and governed simulations without crossing into decision-making. This protects the separation between evidence and action, ensuring that the system remains an instrument for human decision-makers rather than an automated authority.

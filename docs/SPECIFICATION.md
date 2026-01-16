@@ -36,9 +36,9 @@ A Report is a descriptive output that is audited and traceable.
 
 **Forbidden in a Report:**
 
-- recommendations
+- prescriptive directives
 - judgments
-- optimization claims
+- performance-improvement claims
 - subjective language
 
 A Report is invalid if any forbidden content appears.

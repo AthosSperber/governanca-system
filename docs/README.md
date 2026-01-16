@@ -5,15 +5,23 @@
 - [Constitution](../constitution/GOVERNANCA_SYSTEM_CONSTITUTION.md)
 - [Governance Process](../constitution/GOVERNANCE.md)
 
+## Framework de Governança
+
+- [Orientação do Framework](FRAMEWORK.md)
+- [Adicionar um Domínio](ADDING_A_DOMAIN.md)
+
 ## Documentação do Projeto
 
 - [Overview](OVERVIEW.md)
 - [Roadmap](ROADMAP.md)
-- [Sprints](SPRINTS)
 - [Changelog](CHANGELOG.md)
 - [Specification](SPECIFICATION.md)
 - [Domain Model](DOMAIN_MODEL.md)
 - [Process](PROCESS.md)
+
+## Sprints
+
+- [Sprints](SPRINTS)
 
 ## Interview Pack
 
@@ -24,7 +32,7 @@
 - [04 - Demo Script](../interview_pack/04_demo_script.md)
 - [05 - References](../interview_pack/05_references.md)
 
-## Aplicações
+## Domínio de Referência (Academia)
 
 - [Academia (Historical)](../applications/academia/README.md)
 - [Academia Simulation](../applications/academia_simulation/README.md)

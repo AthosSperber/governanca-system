@@ -27,4 +27,4 @@ A more reliable documentation layer and governance-aligned CI expectations.
 
 - No changes to domain semantics.
 - No new analytical metrics.
-- No recommendations or decisions.
+- No prescriptive directives or decisions.
