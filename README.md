@@ -11,7 +11,7 @@ Para navegação de documentos, veja o [Índice de Documentação](docs/README.m
 
 ## Demo (no install)
 
-GitHub Pages Demo: https://<OWNER>.github.io/governanca-system/ (replace <OWNER> if forked)
+GitHub Pages Demo: https://athossperber.github.io/governanca-system/
 
 ## What you can verify in 60 seconds
 
