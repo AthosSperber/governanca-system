@@ -35,11 +35,15 @@ jobs:
       - name: Generate visualization artifacts
         run: python main.py run --app academia_visualization
 
+      - name: Generate Conexao Solar snapshot
+        run: python main.py run --app conexao_solar
+
       - name: Copy demo artifacts
         run: |
           cp output/report_academia_historical.html docs-site/report_academia_historical.html
           cp output/report_academia_simulation.html docs-site/report_academia_simulation.html
           cp output/report_academia_combined.html docs-site/report_academia_combined.html
+          cp output/governed_snapshot_conexao_solar.json docs-site/governed_snapshot_conexao_solar.json
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

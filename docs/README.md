@@ -39,6 +39,7 @@
 
 - [Overview](OVERVIEW.md)
 - [Roadmap](ROADMAP.md)
+- [Roadmap v0.2](ROADMAP_v0.2.md)
 - [Changelog](CHANGELOG.md)
 - [Specification](SPECIFICATION.md)
 - [Domain Model](DOMAIN_MODEL.md)
@@ -64,8 +65,9 @@
 - [04 - Demo Script](../interview_pack/04_demo_script.md)
 - [05 - References](../interview_pack/05_references.md)
 
-## Domínio de Referência (Academia)
+## Domínios de Referência
 
 - [Academia (Historical)](../applications/academia/README.md)
 - [Academia Simulation](../applications/academia_simulation/README.md)
 - [Academia Visualization](../applications/academia_visualization/README.md)
+- [Conexão Solar (Historical Snapshot)](../applications/conexao_solar/README.md)

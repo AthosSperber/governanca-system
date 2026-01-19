@@ -27,7 +27,12 @@
    python main.py run --app academia_visualization
    ```
 
-5. **Exibir logs append-only**
+5. **Gerar snapshot governado (Conexão Solar)**
+   ```bash
+   python main.py run --app conexao_solar
+   ```
+
+6. **Exibir logs append-only**
    ```bash
    python main.py show-logs
    ```
@@ -38,4 +43,5 @@
 - **Academia (histórico)**: métricas agregadas em JSON no relatório.
 - **Academia Simulation**: métricas simuladas e comparação numérica com histórico.
 - **Academia Visualization**: arquivos HTML gerados em `output/`.
+- **Conexão Solar (histórico)**: snapshot governado em JSON gerado em `output/`.
 - **Show-logs**: linhas JSON correlacionadas por IDs.

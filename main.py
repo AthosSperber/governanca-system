@@ -10,6 +10,7 @@ from applications.academia_simulation.mission import create_academia_simulation_
 from applications.academia_visualization.mission import (
     create_academia_visualization_mission,
 )
+from applications.conexao_solar.mission import create_conexao_solar_mission
 from core.governance import Governance
 
 
@@ -21,6 +22,8 @@ def _run_app(app: str) -> None:
         task = create_academia_simulation_mission()
     elif app == "academia_visualization":
         task = create_academia_visualization_mission()
+    elif app == "conexao_solar":
+        task = create_conexao_solar_mission()
     else:
         raise ValueError(f"Aplicação não suportada: {app}")
     final_report = governance.run(task)
@@ -52,7 +55,12 @@ def _build_parser() -> argparse.ArgumentParser:
     run_parser.add_argument(
         "--app",
         required=True,
-        choices=["academia", "academia_simulation", "academia_visualization"],
+        choices=[
+            "academia",
+            "academia_simulation",
+            "academia_visualization",
+            "conexao_solar",
+        ],
         help="Aplicação alvo",
     )
 

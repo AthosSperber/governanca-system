@@ -19,6 +19,7 @@ A governança coordena esse fluxo e mantém rastreabilidade ponta a ponta.
   - `academia` — métricas históricas básicas.
   - `academia_simulation` — simulação hipotética com comparação numérica.
   - `academia_visualization` — HTML estático com histórico, simulação e comparação.
+  - `conexao_solar` — snapshot governado em JSON para consumo externo.
 
 ## Traceability e audit trail
 
@@ -42,5 +43,5 @@ Task -> Action -> Report
 Governance (append-only) -> memory/events.jsonl
 
 Agents: Executor | Auditor | Creative
-Applications: academia | academia_simulation | academia_visualization
+Applications: academia | academia_simulation | academia_visualization | conexao_solar
 ```
