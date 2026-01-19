@@ -13,6 +13,12 @@ Para navegação de documentos, veja o [Índice de Documentação](docs/README.m
 
 GitHub Pages Demo: https://athossperber.github.io/governanca-system/
 
+## Consumer App Example: Conexão Solar (React/TS)
+
+- Repo consumidor: https://github.com/AthosSperber/ConexaoSolar
+- Snapshot JSON (Pages): https://athossperber.github.io/governanca-system/governed_snapshot_conexao_solar.json
+- Demo Pages: https://athossperber.github.io/governanca-system/
+
 ## What you can verify in 60 seconds
 
 1. Abrir o link do demo.
@@ -38,6 +44,7 @@ python main.py selftest
 python main.py run --app academia
 python main.py run --app academia_simulation
 python main.py run --app academia_visualization
+python main.py run --app conexao_solar
 ```
 
 Os relatórios HTML são gerados em `output/`.
@@ -47,6 +54,7 @@ Os relatórios HTML são gerados em `output/`.
 - JSON de relatório no terminal.
 - Log append-only em `memory/events.jsonl`.
 - Relatórios HTML em `output/`.
+- Snapshot governado em `output/governed_snapshot_conexao_solar.json`.
 
 ## Arquitetura em um olhar
 
@@ -57,7 +65,7 @@ Task -> Action -> Report
 Governance (append-only) -> memory/events.jsonl
 
 Agents: Executor | Auditor | Creative
-Applications: academia | academia_simulation | academia_visualization
+Applications: academia | academia_simulation | academia_visualization | conexao_solar
 ```
 
 ## Projetos

@@ -8,6 +8,8 @@ from applications.academia.mission import create_academia_mission
 from applications.academia_simulation.mission import create_academia_simulation_mission
 from applications.academia_simulation.simulator import run_academia_simulation
 from applications.academia_visualization.renderer import render_academia_visualization
+from applications.conexao_solar.metrics import build_conexao_solar_metrics
+from applications.conexao_solar.snapshot import render_conexao_solar_snapshot
 from agents.auditor import AuditorAgent
 from core.protocol import CONSTITUTION_PATH, CONSTITUTION_VERSION, Action, Report, Task
 
@@ -30,6 +32,7 @@ class ExecutorAgent:
             },
         }
         report_status = "ok"
+        report_created_at = _utc_now_iso()
         if context == "academia":
             details["context_route"] = "academia"
             details["metrics"] = build_academia_metrics()
@@ -71,11 +74,21 @@ class ExecutorAgent:
             else:
                 details["output_paths"] = {}
                 details["visualization_status"] = "rejected"
+        elif context == "conexao_solar":
+            details["context_route"] = "conexao_solar"
+            details["metrics"] = build_conexao_solar_metrics()
+            snapshot_path = render_conexao_solar_snapshot(
+                details["metrics"],
+                generated_at=report_created_at,
+            )
+            details["output_paths"] = {
+                "governed_snapshot": str(snapshot_path),
+            }
         summary = "Execution completed with neutral reporting."
         return Report(
             id=str(uuid.uuid4()),
             action_id=action.id,
-            created_at=_utc_now_iso(),
+            created_at=report_created_at,
             summary=summary,
             details=details,
             status=report_status,
